@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>左右定宽中间自适应（用绝对定位实现）</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/component.css"/>
+    <style>
+        .left, .right{position: absolute; width: 200px; height: 200px; top: 45px;}
+        .left{left: 0;}
+        .right{right: 0;}
+        .middle{margin: 0 200px; height: 200px;}
+    </style>
+</head>
+<body>
+<header>左右定宽中间自适应（用绝对定位实现）</header>
+<div class="left">左列定宽</div>
+<div class="middle">中间自适应</div>
+<div class="right">右列定宽</div>
+</body>
+</html>

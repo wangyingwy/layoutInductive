@@ -1,1 +1,4 @@
-header{background-color: #666666; text-align: center; padding: 10px 0;}
+header{background-color: #666666; text-align: center; color: #ffffff; height: 45px; line-height: 45px;}
+.left{background-color: #ffe6b8;}
+.right{background-color: #a0b3d6;}
+.middle{background-color: #ededed;}

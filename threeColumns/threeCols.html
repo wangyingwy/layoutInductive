@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>三栏自适应（用table-cell实现）</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/component.css"/>
+    <style>
+        .left{float: left; padding: 10px;}
+        .middle{float: left; padding: 10px;}
+        .right{display: table-cell; width: 2000px; *width: auto; *display: inline-block; padding: 10px;}
+    </style>
+</head>
+<body>
+<header>三栏自适应（用table-cell实现）</header>
+<div class="left">左栏</div>
+<div class="middle">中间栏</div>
+<div class="right">右栏</div>
+<!--总的来说，用table-cell实现的三栏自适应布局与用table-cell实现的两栏自适应思路一样，不过比两栏自适应多了一个div，
+所以说这种布局方式适用于多栏布局，只需要设置相应个数的div，最右一栏设置display属性为table-cell就可以了-->
+</body>
+</html>

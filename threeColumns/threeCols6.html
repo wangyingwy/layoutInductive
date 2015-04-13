@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>左中列定宽右列自适应（在双飞翼布局的基础上引入相对定位）</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/component.css"/>
+    <style>
+        .left{float: left; width: 200px; margin-left: -100%; height: 200px;}
+        .right{float: left; width: 200px; margin-left: -100%; position: relative; left: 200px; height: 200px;}
+        .middle{float: left; width: 100%; height: 200px;}
+        .middleIn{margin-left: 400px;}
+    </style>
+</head>
+<body>
+<header>左中列定宽右列自适应（在双飞翼布局的基础上引入相对定位）</header>
+<div class="middle">
+    <div class="middleIn">右列自适应</div>
+</div>
+<div class="left">左列定宽</div>
+<div class="right">中间定宽</div>
+</body>
+</html>

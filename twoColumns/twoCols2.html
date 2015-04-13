@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>左列定宽右列自适应（用负的margin和相对定位实现）</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <link rel="stylesheet" href="../css/component.css"/>
+    <style>
+        .left{position: relative; width: 190px; margin-right: -190px; float: left; height: 200px;}
+        .right{width: 100%; height: 200px; float: right;}
+        .rightIn{margin-left: 200px;}
+    </style>
+</head>
+<body>
+<header>左列定宽右列自适应（用负的margin和相对定位实现）</header>
+<div class="left">左列定宽</div>
+<div class="right">
+    <div class="rightIn">
+        右列自适应
+    </div>
+</div>
+</body>
+</html>
