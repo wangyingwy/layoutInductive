@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在需要居中的元素前面放一个空的div</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        html,body{height: 100%;}
+        .floater{float: left; height: 50%; /*相对于父元素高度的50%*/ margin-bottom: -45px; /*值大小为居中元素高度的一半（240px/2）*/}
+        .content{clear: both; /*清除浮动*/ height: 90px; position: relative;}
+    </style>
+</head>
+<body>
+<div class="floater"></div>
+<div class="content">
+    <p>在需要居中的元素前面放一个空的div（块元素就可以），然后设置这个div的高度为50%，margin-bottom为元素高度的一半，而且居中元素需要清除浮动。需要注意的是，使用这种方法，如果你的居中元素是放在body中的话，
+        你需要给html，body设置一个height：100%属性</p>
+    <p>优点：这种方法能兼容所有浏览器，在没有足够的空间下，内容不会被切掉</p>
+    <p>缺点：元素高度被固定死，无法达到内容自适应高度，如果居中元素加速overflow属性，要么元素出现滚动条，要么元素被切掉。另外，这种方法加了一个空标签</p>
+</div>
+</body>
+</html>

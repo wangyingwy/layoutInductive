@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>给容器使用单独的背景色（固定布局）</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        .container{width: 960px; margin: 10px auto;}
+        .rightWrap{width: 100%; float: left; background: #ffe6b8; overflow: hidden; position: relative;}
+        .contentWrap{float: left; background: #a0b3d6; position: relative; right: 320px;/*此值等于right的宽度*/}
+        .leftWrap{width: 100%; background: #666; float: left; position: relative; right: 420px;/*此值等于content的宽度*/}
+        #left{float: left; width: 220px; height: 20px; overflow: hidden; position: relative; left: 740px;}
+        #content{float: left; width: 420px; height: 80px; overflow: hidden; position: relative; left: 740px;}
+        #right{float: left; overflow: hidden; width: 320px; height: 100px; background: #ededed; position: relative; left: 740px;}
+    </style>
+</head>
+<body>
+<p>这种方法，优点：不需要借助其他东西，能兼容所有浏览器，并容易创建任意列数；缺点：理解有难度</p>
+<p>这种方法的实现原则就是：任何div元素的最大高度来撑大其他的div容器高度，如图所示：</p>
+<img src="../img/img-explain1.png" alt="说明图1"/>
+<p>上图中，不管我们哪一列的高度最高，那么其三个容器：rightBack,contentBack,leftBack的高度相应会随最高列的变化</p>
+<img src="../img/img-explain2.png" alt="说明图2"/>
+<p>上图说明的是right，content，left进行相对定位，并展示了如何设置对于的right值。上图虚线代表的是可视范围，其中有两列背景会溢出，解决这个问题需要在最外层容器rightWrap设置overflow：hidden</p>
+<img src="../img/img-explain3.png" alt="说明图3"/>
+<p>前面对三个内容进行了相对定位，所以最后要把left，content，right重新定位回去</p>
+<div class="container">
+    <div class="rightWrap">
+        <div class="contentWrap">
+            <div class="leftWrap">
+                <div id="left"></div>
+                <div id="content"></div>
+                <div id="right"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>采用的display:inline-block然后借助另一个元素的高度来实现居中</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        html,body{height: 100%;}
+        .parent{height: 500px; /*定义高度，让线盒型div extra有一个参照物，也可以使百分比*/ border: 1px solid #000;}
+        .vertically-center,.extra{display: inline-block; vertical-align: middle;}
+        .extra{height: 100%; /*设置线盒型为父元素的100%高度*/}
+    </style>
+    <!--[if lt IE 8]>
+    <style type="text/css">
+        /*IE6-7不支持display:inline-block，所以在ie6-7另外写一个hack，用来支持ie6-7*/
+        .vertically-center,.extra {display: inline; zoom: 1;}
+        .extra {width: 1px;}
+    </style>
+    <![endif]-->
+</head>
+<body>
+<div class="parent">
+    <div class="vertically-center">
+        <p>I am vertically centered!</p>
+        <p>优点：可以自适应高度，简单易懂</p>
+        <p>缺点：需要给父元素设置一个高度，可以固定高度可以为百分比，另外需要增加一个额外的标签，当做线盒型，如div extra，并且需要设置其高度为100%。ie6-7不支持display inline-block，需要另外给他们写一个样式</p>
+    </div>
+    <div class="extra"></div>
+</div>
+</body>
+</html>

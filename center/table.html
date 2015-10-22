@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用div模拟表格效果</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        /*方法1*/
+        .container{height: 300px; border: 1px solid #000; display: table; /*让元素以表格形式渲染*/}
+        .content{display: table-cell; /*让元素以表格的单元素格式渲染*/ vertical-align: middle; /*使用元素的垂直对齐*/}
+        /*方法2*/
+        .table{height: 300px; /*高度值不能少*/ width: 300px; /*宽度值不能少*/ display: table; position: relative; float: left; border: 1px solid #000;}
+        .table-cell{display: table-cell; vertical-align: middle; text-align: center; padding: 10px; *position: absolute; *top: 50%; *left: 50%;}
+        .table-cell-content{*position: relative; *top: -50%; *left: -50%;}
+        /*方法3*/
+        .line-table{border: 1px solid #000; display: table; height: 200px; width: 200px; text-align: center;}
+        .line-table-cell{display: table-cell; vertical-align: middle;}
+    </style>
+    <!--[if lte ie 7]>
+    <style>
+        .line-table{display: inline-block;}
+        b{display: inline-block; height: 100%; vertical-align: middle; width: 1px;}
+    </style>
+    <![endif]-->
+</head>
+<body>
+<p>不兼容ie6-7：</p>
+<div class="container">
+    <div class="content">
+        <p>优点：这种方法没有高度限制，可以根据元素内容改变高度，从而也就没有空间显示，元素的内容不会因为没有足够的空间而被切断或者出现难看的滚动条</p>
+        <p>缺点：不兼容ie6-7</p>
+    </div>
+</div>
+<p>兼容ie6-7的解决方法：</p>
+<div class="table">
+    <div class="table-cell">
+        <div class="table-cell-content">
+            额外增加一个div，并使用hack,以此来兼容ie6-7
+        </div>
+    </div>
+</div>
+<p>兼容ie的解决方法（添加线盒型）：</p>
+<p class="line-table">
+    <span class="line-table-cell">
+        使用display：table-cell来实现，需要一个线盒型，用来实现IE下的效果，需要增加一个行内标签（比如span），最好使用行内标签，不要使用块标签，因为块标签会没有效果，并把这个线盒型高度设置为100%
+        <br/>
+        优点：这种方法不会有高度的限制。缺点：为了让IE运行正常，需要额外增加一些标签。线盒型的标签种类有限制
+    </span>
+    <!--[if lte IE 7]><b></b><![endif]-->
+</p>
+</body>
+</html>

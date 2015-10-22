@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用table实现等高列效果</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        .table{width: auto; min-width: 1000px; margin: 0 auto; display: table;}
+        .tableRow{display: table-row;}
+        .tableCell{display: table-cell; width: 33%;}
+        .cell1{background-color: #f00;}
+        .cell2{background-color: #0f0;}
+        .cell3{background-color: #00f;}
+    </style>
+</head>
+<body>
+<div class="container table">
+    <div class="containerInner tableRow">
+        <div class="column tableCell cell1">
+            <div class="left aside">
+                优点：这是一种非常简单，易于实现的方法。
+            </div>
+        </div>
+
+        <div class="column tableCell cell2">
+            <div class="content section">
+                缺点：兼容性不好，在ie6-7无法正常运行。
+            </div>
+        </div>
+
+        <div class="column tableCell cell3">
+            <div class="right aside">
+                ...
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

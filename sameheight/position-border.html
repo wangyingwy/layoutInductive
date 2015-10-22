@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用边框和定位模拟列等高</title>
+    <link rel="stylesheet" href="../css/reset.css"/>
+    <style>
+        #wrapper{width: 960px; margin: 0 auto;}
+        #mainContent{border-right: 220px solid #dfdfdf; position: absolute; width: 740px; height: 80px;}
+        #sidebar{background: #dfdfdf; margin-left: 740px; position: absolute; width: 220px; height: 110px;}
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="mainContent">优点：结构简单，兼容各浏览器，容易掌握</div>
+    <div id="sidebar">缺点：无法单独给主内容列设置背景色，实现多列效果不佳</div>
+</div>
+</body>
+</html>
